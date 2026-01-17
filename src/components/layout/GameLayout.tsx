@@ -54,7 +54,7 @@ export function GameLayout({
       >
         {/* Header / Logo Area */}
         {!hideHeader && (
-          <header className="relative py-6 flex flex-col items-center justify-center space-y-2">
+          <header className="relative py-2 flex flex-col items-center justify-center space-y-2">
             {/* Exit Button */}
             {showExitButton && (
               <button
@@ -77,11 +77,15 @@ export function GameLayout({
               </button>
             )}
 
-            <div className="relative w-64 md:w-80 lg:w-80 h-16 md:h-20 lg:h-20 mb-2">
+            <div
+              className="relative w-64 md:w-80 lg:w-80 h-16 md:h-20 lg:h-20 mb-2"
+              style={{ WebkitTransform: "translateZ(0)" }}
+            >
               <Image
                 src="/title.png"
                 alt="L'Impostore"
                 fill
+                sizes="(min-width: 768px) 320px, 256px"
                 className="object-contain"
                 priority
               />

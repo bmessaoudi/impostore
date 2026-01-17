@@ -121,13 +121,15 @@ export function PlayerRoleCard({
               transform: "translateZ(1px)",
             }}
           >
-            <Image
-              src="/card-back.png"
-              alt="Top Secret"
-              fill
-              className="object-cover opacity-60 pointer-events-none"
-              style={{ backfaceVisibility: "hidden" }}
-            />
+            <div className="absolute inset-0">
+              <Image
+                src="/card-back.png"
+                alt="Top Secret"
+                fill
+                className="object-cover opacity-60 pointer-events-none"
+                style={{ backfaceVisibility: "hidden" }}
+              />
+            </div>
             <div
               className="absolute inset-0 bg-black/40 z-0 pointer-events-none"
               style={{ backfaceVisibility: "hidden" }}
@@ -165,13 +167,15 @@ export function PlayerRoleCard({
           >
             {isImpostor ? (
               <>
-                <Image
-                  src="/card-back.png"
-                  alt="Impostor Background"
-                  fill
-                  className="object-cover absolute inset-0 opacity-60 pointer-events-none"
-                  style={{ backfaceVisibility: "hidden" }}
-                />
+                <div className="absolute inset-0">
+                  <Image
+                    src="/card-back.png"
+                    alt="Impostor Background"
+                    fill
+                    className="object-cover opacity-60 pointer-events-none"
+                    style={{ backfaceVisibility: "hidden" }}
+                  />
+                </div>
                 <div
                   className="absolute inset-0 bg-black/60 z-0 pointer-events-none"
                   style={{ backfaceVisibility: "hidden" }}
@@ -196,13 +200,15 @@ export function PlayerRoleCard({
               </>
             ) : (
               <>
-                <Image
-                  src="/card-back.png"
-                  alt="Citizen Background"
-                  fill
-                  className="object-cover absolute inset-0 opacity-60 pointer-events-none"
-                  style={{ backfaceVisibility: "hidden" }}
-                />
+                <div className="absolute inset-0">
+                  <Image
+                    src="/card-back.png"
+                    alt="Citizen Background"
+                    fill
+                    className="object-cover opacity-60 pointer-events-none"
+                    style={{ backfaceVisibility: "hidden" }}
+                  />
+                </div>
                 <div
                   className="absolute inset-0 bg-black/50 z-0 pointer-events-none"
                   style={{ backfaceVisibility: "hidden" }}
