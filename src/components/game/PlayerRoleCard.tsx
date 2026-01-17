@@ -118,6 +118,7 @@ export function PlayerRoleCard({
             style={{
               backfaceVisibility: "hidden",
               WebkitBackfaceVisibility: "hidden",
+              transform: "translateZ(1px)",
             }}
           >
             <Image
@@ -151,7 +152,7 @@ export function PlayerRoleCard({
           {/* BACK (Revealed) */}
           <div
             className={twMerge(
-              "absolute inset-0 rotate-y-180 rounded-2xl p-6 flex flex-col items-center justify-center shadow-2xl border-4 overflow-hidden",
+              "absolute inset-0 rounded-2xl p-6 flex flex-col items-center justify-center shadow-2xl border-4 overflow-hidden",
               isImpostor
                 ? "bg-noir-bg border-noir-red"
                 : "bg-noir-bg border-noir-gold",
@@ -159,7 +160,7 @@ export function PlayerRoleCard({
             style={{
               backfaceVisibility: "hidden",
               WebkitBackfaceVisibility: "hidden",
-              transform: "rotateY(180deg)",
+              transform: "rotateY(180deg) translateZ(1px)",
             }}
           >
             {isImpostor ? (
