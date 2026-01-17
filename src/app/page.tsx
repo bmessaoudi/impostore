@@ -7,7 +7,7 @@ import { RoleDistribution } from "@/components/game/RoleDistribution";
 import { GameLoop } from "@/components/game/GameLoop";
 import { VotingPhase } from "@/components/game/VotingPhase";
 import { WelcomeScreen } from "@/components/game/WelcomeScreen";
-import { Tutorial } from "@/components/game/Tutorial";
+
 import { useEffect, useState } from "react";
 
 export default function Home() {
@@ -31,9 +31,6 @@ export default function Home() {
 
   return (
     <GameLayout hideHeader={status === "welcome"}>
-      {/* Tutorial Overlay */}
-      {status === "setup" && !settings.tutorialSeen && <Tutorial />}
-
       {status === "welcome" && <WelcomeScreen />}
       {status === "setup" && <SetupPhase />}
       {status === "distributing" && <RoleDistribution />}

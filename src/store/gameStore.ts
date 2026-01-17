@@ -50,6 +50,11 @@ interface GameState {
 
     resetGame: (fullReset?: boolean) => void;
     setGameStatus: (status: GameStatus) => void;
+
+    // UI STATE
+    isTutorialOpen: boolean;
+    openTutorial: () => void;
+    closeTutorial: () => void;
 }
 
 export const useGameStore = create<GameState>()(
@@ -71,6 +76,10 @@ export const useGameStore = create<GameState>()(
             roundsPlayed: 0,
             revealedPlayers: [],
             dealerId: null,
+            isTutorialOpen: false,
+
+            openTutorial: () => set({ isTutorialOpen: true }),
+            closeTutorial: () => set({ isTutorialOpen: false }),
 
             addPlayer: (name) => set((state) => ({
                 players: [

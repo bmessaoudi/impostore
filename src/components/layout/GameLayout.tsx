@@ -4,8 +4,9 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
-import { LogOut, AlertTriangle } from "lucide-react";
+import { LogOut, AlertTriangle, Info } from "lucide-react";
 import { useGameStore } from "@/store/gameStore";
+import { Tutorial } from "@/components/game/Tutorial";
 
 interface GameLayoutProps {
   children: React.ReactNode;
@@ -65,7 +66,18 @@ export function GameLayout({
               </button>
             )}
 
-            <div className="relative w-64 h-16 mb-2">
+            {/* Info Button */}
+            {!showExitButton && (
+              <button
+                onClick={() => useGameStore.getState().openTutorial()}
+                className="absolute left-0 top-1/2 -translate-y-1/2 p-2 text-gray-400 hover:text-noir-gold transition-colors z-50"
+                aria-label="Info Tutorial"
+              >
+                <Info className="w-6 h-6" />
+              </button>
+            )}
+
+            <div className="relative w-64 md:w-80 lg:w-80 h-16 md:h-20 lg:h-20 mb-2">
               <Image
                 src="/title.png"
                 alt="L'Impostore"
@@ -116,6 +128,9 @@ export function GameLayout({
           </div>
         </div>
       )}
+
+      {/* Tutorial Modal */}
+      {useGameStore((state) => state.isTutorialOpen) && <Tutorial />}
     </div>
   );
 }

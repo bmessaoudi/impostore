@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useGameStore } from "@/store/gameStore";
 import { Plus, X, Users, Trash2, Milestone, Play } from "lucide-react";
 import { clsx } from "clsx";
+import { Footer } from "./Footer";
 
 export function SetupPhase() {
   const {
@@ -205,6 +206,8 @@ export function SetupPhase() {
           INIZIA INDAGINE
         </button>
       </div>
+
+      <Footer />
     </div>
   );
 }

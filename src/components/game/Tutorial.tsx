@@ -10,11 +10,12 @@ import {
 } from "lucide-react";
 
 export function Tutorial() {
-  const { updateSettings } = useGameStore();
+  const { updateSettings, closeTutorial } = useGameStore();
   const [step, setStep] = useState(0);
 
   const handleClose = () => {
     updateSettings({ tutorialSeen: true });
+    closeTutorial();
   };
 
   const steps = [
